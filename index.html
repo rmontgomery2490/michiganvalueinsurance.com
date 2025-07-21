@@ -1,0 +1,39 @@
+<!-- entire HTML content preserved above -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// LocalStorage + Form Validation
+const form = document.getElementById("quoteForm");
+form.addEventListener("submit", function(event) {
+  // Validate ZIP and Email
+  const zip = document.getElementById("zip").value;
+  const email = form.email.value;
+  if (!/^\d{5}$/.test(zip)) {
+    alert("Please enter a valid 5-digit ZIP code.");
+    event.preventDefault();
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert("Please enter a valid email address.");
+    event.preventDefault();
+    return;
+  }
+
+  // Save form data to localStorage
+  const formData = new FormData(form);
+  const savedData = {};
+  formData.forEach((value, key) => {
+    if (savedData[key]) {
+      savedData[key] += ", " + value;
+    } else {
+      savedData[key] = value;
+    }
+  });
+  localStorage.setItem("insuranceQuoteData", JSON.stringify(savedData));
+
+  // Redirect to thank-you page
+  form.action = "submit.php"; // backend email script
+  form.method = "POST";
+});
+</script>
+</body>
+</html>
