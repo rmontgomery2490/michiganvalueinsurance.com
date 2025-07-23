@@ -11,41 +11,50 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       font-size: 16px;
       line-height: 1.5;
-      background-color: #ffffff;
+      margin: 0;
     }
     .scene {
       padding: 60px 0;
       background-size: cover;
       background-position: center;
-      color: white;
+      background-color: #333;
+      color: #fff;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-      min-height: 400px;
+      min-height: 90vh;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
     .scene h2 {
       font-size: 2.2rem;
     }
+    .scene p {
+      font-size: 1.1rem;
+    }
     .scene-1 {
-      background-image: url('https://images.unsplash.com/photo-1520207581500-8b08adf3d50d?auto=format&fit=crop&w=1400&q=80');
+      background-image: url('https://images.unsplash.com/photo-1533777324565-a040eb52fac1?auto=format&fit=crop&w=1400&q=80');
     }
     .scene-2 {
-      background-image: url('https://images.unsplash.com/photo-1549921296-3a6b9aef67b8?auto=format&fit=crop&w=1400&q=80');
+      background-image: url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80');
     }
     .scene-3 {
-      background-image: url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1400&q=80');
+      background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1400&q=80');
     }
     .scene-4 {
-      background-image: url('https://images.unsplash.com/photo-1588776814546-d705b0483c5b?auto=format&fit=crop&w=1400&q=80');
+      background-image: url('https://images.unsplash.com/photo-1605902711622-cfb43c44367e?auto=format&fit=crop&w=1400&q=80');
     }
     .scene .container {
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(0, 0, 0, 0.4);
       padding: 30px;
       border-radius: 15px;
+      max-width: 600px;
     }
     @media (max-width: 768px) {
       .scene h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+      }
+      .scene p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -67,34 +76,36 @@
     </div>
   </nav>
 
-  <section class="scene scene-1">
-    <div class="container text-center">
-      <h2>It all starts with a conversation over coffee ☕</h2>
-      <p>Two friends chat about how they cut their bills—insurance savings comes up.</p>
-    </div>
-  </section>
+  <main>
+    <section class="scene scene-1" role="region" aria-label="Coffee Conversation">
+      <div class="container text-center">
+        <h2>It all starts with a conversation over coffee ☕</h2>
+        <p>Two friends chat about how they cut their bills—insurance savings comes up.</p>
+      </div>
+    </section>
 
-  <section class="scene scene-2">
-    <div class="container text-center">
-      <h2>Next stop: behind the wheel 🚗</h2>
-      <p>Realizing it’s time to compare auto insurance quotes side-by-side.</p>
-    </div>
-  </section>
+    <section class="scene scene-2" role="region" aria-label="Auto Scene">
+      <div class="container text-center">
+        <h2>Next stop: behind the wheel 🚗</h2>
+        <p>Realizing it’s time to compare auto insurance quotes side-by-side.</p>
+      </div>
+    </section>
 
-  <section class="scene scene-3">
-    <div class="container text-center">
-      <h2>Smiles all around 😄</h2>
-      <p>They find coverage that actually works—without breaking the bank.</p>
-    </div>
-  </section>
+    <section class="scene scene-3" role="region" aria-label="Smiling Family">
+      <div class="container text-center">
+        <h2>Smiles all around 😄</h2>
+        <p>They find coverage that actually works—without breaking the bank.</p>
+      </div>
+    </section>
 
-  <section class="scene scene-4">
-    <div class="container text-center">
-      <h2>Cash in hand 💰</h2>
-      <p>Making the switch means real savings—and more money to spend on what matters.</p>
-      <a href="quote.html" class="btn btn-light mt-3">Compare Rates Now</a>
-    </div>
-  </section>
+    <section class="scene scene-4" role="region" aria-label="Cash Savings">
+      <div class="container text-center">
+        <h2>Cash in hand 💰</h2>
+        <p>Making the switch means real savings—and more money to spend on what matters.</p>
+        <a href="quote.html" class="btn btn-light mt-3">Compare Rates Now</a>
+      </div>
+    </section>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
